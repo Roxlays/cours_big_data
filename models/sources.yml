@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+  - name: dbt_eleon
+    database: big-data-444612
+    schema: raw_data
+    description: Sources brutes des données
+    tables:
+      - name: customers
+        identifier: customers
+
+      - name: geolocation
+        identifier: geolocation
+
+      - name: leads_closed
+        identifier: leads_closed
+
+      - name: leads_qualified
+        identifier: leads_qualified
+
+      - name: order_items
+        identifier: order_items
+        config:
+          tags: ['sales']
+
+      - name: order_payments
+        identifier: order_payments
+        config:
+          tags: ['sales']
+        
+      - name: order_reviews
+        identifier: order_reviews
+        config:
+          tags: ['sales']
+
+      - name: order
+        identifier: order
+        config:
+          tags: ['sales']
+
+      - name: product_category_name_translation
+        identifier: product_category_name_translation
+
+      - name: products
+        identifier: products
+
+      - name: sellers
+        identifier: sellers
