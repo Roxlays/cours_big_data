@@ -9,10 +9,10 @@ source as (
 renamed as (
 
     select
-        _line::integer as _line,
-        _fivetran_synced::timestamp as _fivetran_synced,
-        product_category_name::string as product_category_name,
-        product_category_name_english::string as product_category_name_english
+        CAST(_line AS INT64) as _line,
+        CAST(_fivetran_synced AS TIMESTAMP) as _fivetran_synced,
+        CAST(product_category_name AS STRING) as product_category_name,
+        CAST(product_category_name_english AS STRING) as product_category_name_english
 
     from source
 

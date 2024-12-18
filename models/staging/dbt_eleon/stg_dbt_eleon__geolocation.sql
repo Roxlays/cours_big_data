@@ -9,13 +9,13 @@ source as (
 renamed as (
 
     select
-        _line::integer as _line,
-        _fivetran_synced::timestamp as _fivetran_synced,
-        geolocation_zip_code_prefix::integer as geolocation_zip_code_prefix,
-        geolocation_lat::float as geolocation_lat,
-        geolocation_lng::float as geolocation_lng,
-        geolocation_city::string as geolocation_city,
-        geolocation_state::string as geolocation_state
+        CAST(_line AS INT64) as _line,
+        CAST(_fivetran_synced AS TIMESTAMP) as _fivetran_synced,
+        CAST(geolocation_zip_code_prefix AS INT64) as geolocation_zip_code_prefix,
+        CAST(geolocation_lat AS FLOAT64) as geolocation_lat,
+        CAST(geolocation_lng AS FLOAT64) as geolocation_lng,
+        CAST(geolocation_city AS STRING) as geolocation_city,
+        CAST(geolocation_state AS STRING) as geolocation_state
 
     from source
 

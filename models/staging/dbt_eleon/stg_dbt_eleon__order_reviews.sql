@@ -9,15 +9,15 @@ source as (
 renamed as (
 
     select
-        _line::integer as _line,
-        _fivetran_synced::timestamp as _fivetran_synced,
-        review_id::string as review_id,
-        order_id::string as order_id,
-        review_score::integer as review_score,
-        review_comment_title::string as review_comment_title,
-        review_comment_message::string as review_comment_message,
-        review_creation_date::datetime as review_creation_date,
-        review_answer_timestamp::datetime as review_answer_timestamp
+        CAST(_line AS INT64) as _line,
+        CAST(_fivetran_synced AS TIMESTAMP) as _fivetran_synced,
+        CAST(review_id AS STRING) as review_id,
+        CAST(order_id AS STRING) as order_id,
+        CAST(review_score AS INT64) as review_score,
+        CAST(review_comment_title AS STRING) as review_comment_title,
+        CAST(review_comment_message AS STRING) as review_comment_message,
+        CAST(review_creation_date AS TIMESTAMP) as review_creation_date,
+        CAST(review_answer_timestamp AS TIMESTAMP) as review_answer_timestamp
 
     from source
 

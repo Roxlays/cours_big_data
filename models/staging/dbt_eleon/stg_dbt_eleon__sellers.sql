@@ -9,12 +9,12 @@ source as (
 renamed as (
 
     select
-        _line::integer as _line,
-        _fivetran_synced::timestamp as _fivetran_synced,
-        seller_id::string as seller_id,
-        seller_zip_code_prefix::integer as seller_zip_code_prefix,
-        seller_city::string as seller_city,
-        seller_state::string as seller_state
+        CAST(_line AS INT64) as _line,
+        CAST(_fivetran_synced AS TIMESTAMP) as _fivetran_synced,
+        CAST(seller_id AS STRING) as seller_id,
+        CAST(seller_zip_code_prefix AS INT64) as seller_zip_code_prefix,
+        CAST(seller_city AS STRING) as seller_city,
+        CAST(seller_state AS STRING) as seller_state
 
     from source
 

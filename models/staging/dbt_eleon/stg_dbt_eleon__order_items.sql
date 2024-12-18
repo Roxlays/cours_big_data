@@ -9,15 +9,15 @@ source as (
 renamed as (
 
     select
-        _line::integer as _line,
-        _fivetran_synced::timestamp as _fivetran_synced,
-        order_id::string as order_id,
-        order_item_id::integer as order_item_id,
-        product_id::string as product_id,
-        seller_id::string as seller_id,
-        shipping_limit_date::datetime as shipping_limit_date,
-        price::float as price,
-        freight_value::float as freight_value
+        CAST(_line AS INT64) as _line,
+        CAST(_fivetran_synced AS TIMESTAMP) as _fivetran_synced,
+        CAST(order_id AS STRING) as order_id,
+        CAST(order_item_id AS INT64) as order_item_id,
+        CAST(product_id AS STRING) as product_id,
+        CAST(seller_id AS STRING) as seller_id,
+        CAST(shipping_limit_date AS TIMESTAMP) as shipping_limit_date,
+        CAST(price AS FLOAT64) as price,
+        CAST(freight_value AS FLOAT64) as freight_value
 
     from source
 

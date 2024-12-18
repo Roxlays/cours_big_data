@@ -9,13 +9,13 @@ source as (
 renamed as (
 
     select
-        _line::integer as _line,
-        _fivetran_synced::timestamp as _fivetran_synced,
-        customer_id::string as customer_id,
-        customer_unique_id::string as customer_unique_id,
-        customer_zip_code_prefix::integer as customer_zip_code_prefix,
-        customer_city::string as customer_city,
-        customer_state::string as customer_state
+        CAST(_line AS INT64) as _line,
+        CAST(_fivetran_synced AS TIMESTAMP) as _fivetran_synced,
+        CAST(customer_id AS STRING) as customer_id,
+        CAST(customer_unique_id AS STRING) as customer_unique_id,
+        CAST(customer_zip_code_prefix AS INT64) as customer_zip_code_prefix,
+        CAST(customer_city AS STRING) as customer_city,
+        CAST(customer_state AS STRING) as customer_state
 
     from source
 

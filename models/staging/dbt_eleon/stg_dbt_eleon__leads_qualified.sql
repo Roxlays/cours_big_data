@@ -9,13 +9,13 @@ source as (
 renamed as (
 
     select
-        _line::integer as _line,
-        _fivetran_synced::timestamp as _fivetran_synced,
-        mql_id::string as mql_id,
-        first_contact_date::date as first_contact_date,
-        landing_page_id::string as landing_page_id,
-        origin::string as origin
-
+        CAST(_line AS INT64) as _line,
+        CAST(_fivetran_synced AS TIMESTAMP) as _fivetran_synced,
+        CAST(mql_id AS STRING) as mql_id,
+        CAST(first_contact_date AS DATE) as first_contact_date,
+        CAST(landing_page_id AS STRING) as landing_page_id,
+        CAST(origin AS STRING) as origin
+        
     from source
 
 )
