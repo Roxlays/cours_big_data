@@ -9,13 +9,13 @@ source as (
 renamed as (
 
     select
-        _line,
-        _fivetran_synced,
-        geolocation_zip_code_prefix,
-        geolocation_lat,
-        geolocation_lng,
-        geolocation_city,
-        geolocation_state
+        _line::integer as _line,
+        _fivetran_synced::timestamp as _fivetran_synced,
+        geolocation_zip_code_prefix::integer as geolocation_zip_code_prefix,
+        geolocation_lat::float as geolocation_lat,
+        geolocation_lng::float as geolocation_lng,
+        geolocation_city::string as geolocation_city,
+        geolocation_state::string as geolocation_state
 
     from source
 
