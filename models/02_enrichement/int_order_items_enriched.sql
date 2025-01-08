@@ -1,4 +1,6 @@
-with order_items as (
+with 
+
+order_items as (
 
     select * from {{ ref('stg_dbt_eleon__order_items') }}
 ),
